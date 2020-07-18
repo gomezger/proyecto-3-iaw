@@ -1,7 +1,7 @@
 import React from 'react';
-import Login from '../login/login';
-import Carousel from '../carousel/carousel';
-import Us from '../us/us';
+import Login from './login/login';
+import Carousel from './carousel/carousel';
+import Us from './us/us';
 
 class NoLogin extends React.Component {
     render() {
