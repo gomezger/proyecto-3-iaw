@@ -4,7 +4,7 @@ import logo1 from '../assets/logo.png';
 class Header extends React.Component {
     render() {
         return  <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="container">
+                    <div className="container">
                         <a className="navbar-brand col-3" href="/">
                             <img className="col-12" src={logo1} alt="logo" /></a>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
