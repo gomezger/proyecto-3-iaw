@@ -1,24 +1,26 @@
 import React from 'react';
-import Login from './login/login';
-import Carousel from './carousel/carousel';
-import Us from './us/us';
+import NoLogin from './no-login/no-login';
 
 class Content extends React.Component {
     render() {
+        const content = if(auth()){
+            
+        }
+        
+        
         return  (
             <div className="min-heigth">
-                <Carousel />
-                <div className="container">
-                    <div className="col-md-6 float-left">
-                        <Us />   
-                    </div>
-                    <div className="col-md-6 float-left">
-                        <Login />   
-                    </div>
-                </div>
+                <NoLogin />
             </div>
         )
     }
+}
+
+function auth(){
+    const auth = localStorage.getItem('auth');
+    if(auth==null)
+        return false;
+    return true;
 }
 
 export default Content;

@@ -10,6 +10,7 @@ function App() {
     <div className="App">
       <Header />
       <Content />
+      <div className="clearfix"></div>
       <Footer />
     </div>
   );

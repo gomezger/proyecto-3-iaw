@@ -17,7 +17,7 @@ class Header extends React.Component {
                                     <a className="nav-link" href="/">Inicio</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" target="_blank" href="https://proyecto2-german.herokuapp.com/">Mis materias</a>
+                                    <a rel="noopener noreferrer" className="nav-link" target="_blank" href="https://proyecto2-german.herokuapp.com/">Mis materias</a>
                                 </li>
                             </ul>
                         </div>
