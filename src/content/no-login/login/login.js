@@ -59,9 +59,10 @@ class Login extends React.Component {
 
         //armo el body del post
         const data = {
-            email : this.state.email.toLocaleLowerCase,
+            email : this.state.email,
             password : this.state.password,
         }
+
 
         //hacemos la consulta
         postApi('auth/login', data, null)
