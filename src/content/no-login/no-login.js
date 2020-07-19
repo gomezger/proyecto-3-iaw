@@ -13,17 +13,12 @@ class NoLogin extends React.Component {
     }
 
     handleToken = (token) => {   
-        console.log('hola')    
         this.props.handleToken(token);    
         this.props.auth(true);   
     }
 
 
     render() {
-
-        if(this.state && this.state.token)
-            console.log(this.state.token);
-
         return  (
             <div className="col-12 p-0">
                 <Carousel />

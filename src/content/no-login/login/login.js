@@ -59,7 +59,7 @@ class Login extends React.Component {
 
         //armo el body del post
         const data = {
-            email : this.state.email,
+            email : this.state.email.toLocaleLowerCase,
             password : this.state.password,
         }
 
