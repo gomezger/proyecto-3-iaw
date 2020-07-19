@@ -1,0 +1,25 @@
+
+.top{
+    background-image: url('/assets/carousel.jpg');
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-position: bottom;
+    background-size: 100% auto ;
+    
+}
+.sombra{
+    background-color: rgba(0, 1, 5, 0.658); 
+}
+
+
+@media only screen and (max-width: 768px) {   
+    .top{
+        background-size: auto  100% ;
+    }
+    .top .nombre{
+        font-size: unset !important;
+    }
+    .top .promedio{
+        font-size: unset !important;
+    }
+}

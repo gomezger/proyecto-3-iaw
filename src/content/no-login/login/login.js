@@ -1,7 +1,6 @@
 import React from 'react';
 import './login.css';
-//import PropType from 'prop-types';
-import { postApi } from '../../../services/api';
+import { postApi, getApi, getToken } from '../../../services/api';
 
 class Login extends React.Component {
     
@@ -55,7 +54,7 @@ class Login extends React.Component {
         e.preventDefault();
 
         //pongo el carter de validar datos
-        this.setState({loading : true});
+        this.setState({loading : true, error : false});
 
         //armo el body del post
         const data = {
@@ -63,19 +62,26 @@ class Login extends React.Component {
             password : this.state.password,
         }
 
-
         //hacemos la consulta
         postApi('auth/login', data, null)
             .then((response) => {
-                this.setState({loading : false, error: false});                
-                this.props.handleToken(response.data.access_token);   
+                this.setState({loading : false, error: false});     
+                localStorage.setItem('token',response.data.access_token); 
+                this.getDataUser();
             })
             .catch((error) => {
-                console.log(error);
-                this.setState({
-                    error : true,
-                    loading : false
-                });
+                this.setState({error : true, loading : false });
+            });
+
+    }
+    
+    getDataUser = () => {
+        getApi('auth/user', getToken())
+            .then((response) => {
+                localStorage.setItem('name', response.data.name);             
+                this.props.auth(true);
+            })
+            .catch((error) => {
             });
     }
 

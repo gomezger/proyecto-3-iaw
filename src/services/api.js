@@ -7,7 +7,8 @@ const getHeaders = (token) => {
         headers : {
             'X-Requested-With' : 'XMLHttpRequest',
             'Content-Type' : 'application/json',
-            'Authorization' : 'Berear ' + token
+            'Accept' : '*/*',
+            'Authorization' : 'Bearer ' + token
         }
     }
 }
@@ -20,3 +21,6 @@ export const postApi = (path, data, token) => {
     return axios.post(api_url + path, data, getHeaders(token));   
 }
 
+export const getToken = () => {
+    return localStorage.getItem('token');
+} 

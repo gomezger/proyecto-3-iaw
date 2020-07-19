@@ -1,24 +1,23 @@
 import React from 'react';
 import NoLogin from './no-login/no-login';
 import YesLogin from './yes-login/yes-login';
+import {getToken} from '../services/api';
 
 class Content extends React.Component {
+    
     constructor(props){
         super(props);
         this.state = {
-            auth : false,
-            token: null
+            user: null
         }
     }
 
-
     render() {
         
-        if(!this.state.auth)
+        if(!this.isLogged())
             return  (
                 <div className="min-heigth">
                     <NoLogin 
-                        handleToken={this.handleToken}
                         auth={this.auth}
                     />
                 </div>
@@ -26,25 +25,26 @@ class Content extends React.Component {
         else
             return  (
                 <div className="min-heigth">
-                    <YesLogin 
-                        token={this.state.token}
-                    />
+                    <YesLogin />
                 </div>
             )    
         
     }
+
+    isLogged = () => {
+        if(getToken() !== null){
+            return true;
+        }else
+            return false;
+        
+    }
     
     auth = (bool) => {
-        this.setState({
-            auth: bool,
-        })
+        this.setState({auth: bool})
     }
 
-    handleToken = (token) => {
-        this.setState({
-            token: token
-        })
-    }
+
+
 
 }
 

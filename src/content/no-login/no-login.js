@@ -12,9 +12,8 @@ class NoLogin extends React.Component {
         };
     }
 
-    handleToken = (token) => {   
-        this.props.handleToken(token);    
-        this.props.auth(true);   
+    auth = (e) => {    
+        this.props.auth(e);   
     }
 
 
@@ -27,7 +26,7 @@ class NoLogin extends React.Component {
                         <Us />   
                     </div>
                     <div className="col-md-6 float-left">
-                        <Login handleToken={this.handleToken} />   
+                        <Login auth={this.auth} />   
                     </div>
                 </div>
             </div>
