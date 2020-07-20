@@ -40,7 +40,8 @@ class Content extends React.Component {
     }
     
     auth = (bool) => {
-        this.setState({auth: bool})
+        this.setState({auth: bool});
+        this.props.auth = bool;
     }
 
 

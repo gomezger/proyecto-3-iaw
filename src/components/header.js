@@ -1,9 +1,12 @@
 import React from 'react';
 import logo1 from '../assets/logo.png';
+import './header.css';
 
 class Header extends React.Component {
+
     render() {
-        return  <nav className="navbar navbar-expand-lg navbar-light bg-light">
+
+        return  <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                     <div className="container">
                         <a className="navbar-brand col-7 col-md-3 pl-0" href="/">
                             <img className="col-12 pl-0" src={logo1} alt="logo" /></a>
@@ -24,6 +27,7 @@ class Header extends React.Component {
                     </div>
                 </nav>;
     }
+
 }
 
 export default Header;

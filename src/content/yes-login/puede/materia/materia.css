@@ -1,0 +1,10 @@
+.materia{
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+}
+
+.imagen img{
+    width: 40px;
+}

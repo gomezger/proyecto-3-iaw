@@ -1,0 +1,10 @@
+.titulo{
+    float: left;
+    font-family: 'gilroy-ligth', 'Lexend Giga', sans-serif;
+    color: #181818;
+    text-transform: uppercase;
+    margin-top: 30px;
+    font-size: 30px;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid #DDD;
+}

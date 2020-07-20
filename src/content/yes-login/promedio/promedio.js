@@ -1,6 +1,7 @@
 import React from 'react';
 import CountUp from 'react-countup';
 import { getApi, getToken } from '../../../services/api';
+import './promedio.css';
 
 export default class Promedio extends React.Component {
     
