@@ -5,6 +5,7 @@ import Puede from './puede/puede';
 import { getApi, getToken } from '../../services/api';
 import './yes-login.css';
 import Materia from './puede/materia/materia';
+import Aprobada from './puede/aprobada/aprobada';
 
 
 
@@ -15,7 +16,8 @@ export default class YesLogin extends React.Component {
             name_user : localStorage.getItem('name'),
             cursar : null ,
             aprobar: null,
-            rendidos: null
+            rendidos: null,
+            error: false,
         }
     }
 
@@ -27,6 +29,9 @@ export default class YesLogin extends React.Component {
 
 
     render() {
+
+        const error = (this.state.error) ? <div class="alert alert-danger mt-2 mb-2">¡Error! Recargue la web para ver todos los datos</div> : '';
+
         return  (
             <div className="fondo-gris col-12 p-0 float-left">
                 <div className="top col-12 p-0 float-left">
@@ -47,6 +52,9 @@ export default class YesLogin extends React.Component {
 
                 <div className="puede col-12 p-0 float-left pb-5">
                     <div className="container p-0">
+
+                        {error}
+
                         <div className="col-lg-12 p-0 float-left">
                             <Puede titulo="Puede cursar" materias={this.state.cursar}/>
                         </div>
@@ -76,7 +84,7 @@ export default class YesLogin extends React.Component {
                 this.setState({cursar : this.armarListaMaterias(materias)});
             })
             .catch((error) => {
-                this.setState({error : true, loading : false });
+                this.setState({error : true });
             });
     }
 
@@ -88,7 +96,7 @@ export default class YesLogin extends React.Component {
                 this.setState({aprobar : this.armarListaMaterias(materias)});
             })
             .catch((error) => {
-                this.setState({error : true, loading : false });
+                this.setState({error : true });
             });
     }
 
@@ -100,7 +108,7 @@ export default class YesLogin extends React.Component {
                 this.setState({rendidos : this.armarListaFinales(aprobadas)});
             })
             .catch((error) => {
-                this.setState({error : true, loading : false });
+                this.setState({error : true });
             });
     }
 
@@ -117,7 +125,7 @@ export default class YesLogin extends React.Component {
             return [];
         }else
             return materias.map((materia) =>
-                <Materia key={materia.codigo} codigo={materia.codigo} nombre={materia.nombre} profesor_imagen={materia.profesor_imagen} />    
+                <Materia key={materia.codigo} codigo={materia.codigo} nombre={materia.nombre} cuatrimestre={materia.cuatrimestre} profesor={materia.profesor} profesor_imagen={materia.profesor_imagen} />    
             );    
     }
 
@@ -126,7 +134,7 @@ export default class YesLogin extends React.Component {
             return [];
         }else
             return aprobadas.map((aprobada) =>
-                <Materia key={aprobada.materia.codigo} codigo={aprobada.materia.codigo} nombre={aprobada.materia.nombre} nota={aprobada.final} />    
+                <Aprobada key={aprobada.materia.codigo} codigo={aprobada.materia.codigo} profesor={aprobada.materia.profesor}  nombre={aprobada.materia.nombre} nota={aprobada.final} />    
             );    
     }
 

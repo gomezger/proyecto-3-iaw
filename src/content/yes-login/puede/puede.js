@@ -1,6 +1,8 @@
 import React from 'react';
 import './puede.css';
+import './animate.css';
 import Cargando from '../../../components/cargando';
+import ScrollReveal from 'scrollreveal';
 
 
 export default class Puede extends React.Component{
@@ -20,14 +22,17 @@ export default class Puede extends React.Component{
 
 
     render(){
+        ScrollReveal().reveal('.titulo', { delay: 500,  easing: 'ease-in' });
+        ScrollReveal().reveal('.cargando', { delay: 700,  easing: 'ease-in'  });
+
         var data;
         if(this.props.materias===null)
-            data = <div className="col-12 mt-5 mb-5 float-left"><Cargando /></div>;    
+            data = <div className="cargando col-12 mt-5 mb-5 float-left"><Cargando /></div>;    
         else if(this.props.materias.length===0)
             data = <div className="col-12 mt-5 mb-5 float-left">No hay materias</div>;
-        else
-            data = <div className="col-12 p-0">{this.props.materias}</div>
-
+        else{
+            data = <div className="animated fadeInRight col-12 p-0">{this.props.materias}</div>
+        }
 
         return (
             <div className="container">

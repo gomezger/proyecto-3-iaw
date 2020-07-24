@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../puede/animate.css';
 
 
 export default class Titulo extends React.Component {
@@ -14,7 +14,7 @@ export default class Titulo extends React.Component {
     render() {
         return  (                     
             <>
-                <div className="display-4">¡Hola! {this.state.name_user}</div>
+                <div className="display-4 animated fadeInLeft">¡Hola! {this.state.name_user}</div>
                 <small><div role="button" className="float-left pt-2 pl-0 pl-md-2" onClick={this.logout}>Cerrar sesión</div></small>                        
             </>
         )
