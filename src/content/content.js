@@ -1,7 +1,7 @@
 import React from 'react';
 import NoLogin from './no-login/no-login';
 import YesLogin from './yes-login/yes-login';
-import {getToken} from '../services/api';
+import { validateToken } from '../services/api';
 
 class Content extends React.Component {
     
@@ -32,10 +32,7 @@ class Content extends React.Component {
     }
 
     isLogged = () => {
-        if(getToken() !== null){
-            return true;
-        }else
-            return false;
+        return validateToken();
         
     }
     
@@ -43,6 +40,7 @@ class Content extends React.Component {
         this.setState({auth: bool});
         this.props.auth = bool;
     }
+
 
 
 

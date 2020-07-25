@@ -24,3 +24,19 @@ export const postApi = (path, data, token) => {
 export const getToken = () => {
     return localStorage.getItem('token');
 } 
+
+export const validateToken = () => {    
+    if(getToken() !== null && getToken() !== undefined){
+        return notExpires();
+    }else
+        return false;
+}
+
+export const notExpires = () => {    
+    const expires_at = new Date(localStorage.getItem('expires_at'));
+    const now = new Date();
+    if(+expires_at < +now){
+        return false;
+    }else if (+expires_at > +now)
+        return true;
+} 

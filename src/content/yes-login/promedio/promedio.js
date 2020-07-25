@@ -15,7 +15,7 @@ export default class Promedio extends React.Component {
 
     render() {
         return  (
-            <div class="animated zoomInRight">
+            <div className="animated zoomInRight">
                 <div className="col-12 display-4 promedio">
                     <CountUp 
                         start={0.0}

@@ -67,6 +67,7 @@ class Login extends React.Component {
             .then((response) => {
                 this.setState({loading : false, error: false});     
                 localStorage.setItem('token',response.data.access_token); 
+                localStorage.setItem('expires_at',response.data.expires_at); 
                 this.getDataUser();
             })
             .catch((error) => {
