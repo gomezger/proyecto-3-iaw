@@ -1,7 +1,7 @@
 ## Proyecto 3 - IAW - React
 Germán A. Gómez
 
-<b>Link heroku:</b> [https://proyecto-3-gag.herokuapp.com/](https://proyecto-3-gag.herokuapp.com/)
+<b>Link heroku:</b> [https://proyecto-3-gag.herokuapp.com/](https://proyecto-3-gag.herokuapp.com/) <br>
 <b>Link video:</b> [https://youtu.be/EamOwnf_yFM](https://youtu.be/EamOwnf_yFM)
 
 ### Mi Estado: descripción
